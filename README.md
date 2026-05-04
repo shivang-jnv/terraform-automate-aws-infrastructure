@@ -1,56 +1,24 @@
-# Terraform AWS VPC
+# AWS Infrastructure Automation with Terraform
 
-A minimalist Terraform project designed to provision a secure Virtual Private Cloud (VPC) and subnet on Amazon Web Services.
+Automate the provisioning of AWS cloud resources and Docker container deployment.
+
+## Tech Stack
+- **Infrastructure:** Terraform, AWS
+- **Deployment:** Docker, Linux
+- **Version Control:** Git
+
+## Infrastructure Components
+- **Networking:** VPC, Subnet, Route Table, Internet Gateway
+- **Compute:** EC2 Instance
+- **Security:** Security Group (Firewall rules)
 
 ## Features
-
-- **Automated Infrastructure**: Quick deployment of VPC and subnets.
-- **Configurable**: Easily adjust CIDR blocks and availability zones via variable files.
-- **Clear Outputs**: Provides VPC and Subnet IDs for integration with other modules.
-- **State Management**: Ready for local or remote state tracking.
-
-## Prerequisites
-
-Before you begin, ensure you have:
-- [Terraform](https://www.terraform.io/downloads) installed.
-- [AWS CLI](https://aws.amazon.com/cli/) configured with valid credentials.
+- **Infrastructure as Code:** Automated provisioning of a complete VPC environment.
+- **Automated Deployment:** Configures EC2 to automatically pull and run a Docker container on launch.
 
 ## Usage
-
-1. **Initialize Terraform**
-   ```bash
-   terraform init
-   ```
-
-2. **Review Infrastructure Plan**
-   ```bash
-   terraform plan -var-file="terraform-dev.tfvars"
-   ```
-
-3. **Deploy Resources**
-   ```bash
-   terraform apply -var-file="terraform-dev.tfvars"
-   ```
-
-> [!TIP]
-> Use the `-var-file` flag to maintain different environment configurations (e.g., dev, staging, prod) easily.
-
-## Infrastructure Details
-
-The following resources are managed by this project:
-- **VPC**: A development VPC with a customizable CIDR block.
-- **Subnet**: A single subnet within the VPC associated with a specific availability zone.
-
-### Variables
-
-| Name | Description |
-|------|-------------|
-| `cidr_blocks` | List of CIDR blocks for VPC and subnets |
-| `avail_zone` | The AWS availability zone to deploy the subnet in |
-
-### Outputs
-
-| Name | Description |
-|------|-------------|
-| `dev-vpc-id` | The ID of the created VPC |
-| `dev-subnet-id` | The ID of the created subnet |
+1. Initialize Terraform: `terraform init`
+2. Plan changes: `terraform plan`
+3. Apply infrastructure: `terraform apply`
+4. Destroy infrastructure: `terraform destroy`
+5. Apply infrastructure without approval: `terraform apply -auto-approve`
