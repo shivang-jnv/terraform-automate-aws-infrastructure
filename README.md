@@ -16,6 +16,11 @@ Automate the provisioning of AWS cloud resources and Docker container deployment
 - **Infrastructure as Code:** Automated provisioning of a complete VPC environment.
 - **Automated Deployment:** Configures EC2 to automatically pull and run a Docker container on launch.
 
+## Modular Version
+Refactored infrastructure into reusable modules for scalability:
+- **Branch:** `feature/modules`
+- **Modules:** `subnet`, `webserver`
+
 ## Usage
 1. Initialize Terraform: `terraform init`
 2. Plan changes: `terraform plan`
